@@ -1,0 +1,32 @@
+<!--Use of Javascript function as values. Just like assigning value to a variable, we can also assign function to a variable i.e) var addOne = increment-->
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Javascript function as values</title>
+	<meta charset="utf-8">
+	<script>
+		window.onload = init;
+		function init() {
+			alert("Inside Init Method..");
+			var button = document.getElementById("incrementButton");
+			var addOne = increment;
+			button.onclick = addOne;				
+		}
+	
+		function increment(){
+			alert("Inside increment Method..");
+			var number = document.getElementById("IncrementTextInput").value
+			alert("Incremented value is = "+(++number));
+			document.getElementById("ResultText").value = number;
+		}	
+	</script>
+	
+</head>
+<body>
+<form>
+<input type="text" id="IncrementTextInput" size="40" placeholder="Enter a number..">
+<input type="button" id="incrementButton" value="Increment">
+<input type="text" id="ResultText" size="40" placeholder="Result is..">
+</form>
+</body>
+</html>

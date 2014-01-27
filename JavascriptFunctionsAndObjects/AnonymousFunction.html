@@ -1,0 +1,33 @@
+<!--Use of Javascript function anonymously-->
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Javascript anonymous function</title>
+	<meta charset="utf-8">
+	<script>
+		window.onload = init;
+		function init() {
+			alert("Inside Init Method..");
+			var button = document.getElementById("incrementButton");
+			//Here we have defined an anonymous function
+			var addOne = function(){
+				alert("Inside increment Method..");
+				var number = document.getElementById("IncrementTextInput").value
+				alert("Incremented value is = "+(++number));
+				document.getElementById("ResultText").value = number;
+			}
+			button.onclick = addOne;				
+		}
+	
+			
+	</script>
+	
+</head>
+<body>
+<form>
+<input type="text" id="IncrementTextInput" size="40" placeholder="Enter a number..">
+<input type="button" id="incrementButton" value="Increment">
+<input type="text" id="ResultText" size="40" placeholder="Result is..">
+</form>
+</body>
+</html>
